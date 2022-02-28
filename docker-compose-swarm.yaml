@@ -5,9 +5,9 @@ services:
         deploy:
             replicas: 5
         ports:
-            - 8080:80
+            - 8000:80
         volumes:
-            - "${PROJECT_ROOT}:/var/www/html:ro"
+            - "/home/vagrant/hw4/hw4/web:/var/www/html:ro"
         networks:
             - app-network
     db:
@@ -15,6 +15,6 @@ services:
         networks:
             - app-network
         environment:
-            MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
+            MYSQL_ROOT_PASSWORD: "12345"
 networks:
     app-network:
